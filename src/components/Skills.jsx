@@ -1,5 +1,5 @@
 import React from "react";
-import { skills } from "./constants";
+import { skills } from "../data/constants";
 
 const Skills = () => {
   const frontend = skills[0].skills;
@@ -20,8 +20,11 @@ const Skills = () => {
           <div className="border-purple-900 lg:w-[35%] px-1 py-4 lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
             <h1 className="text-2xl lg:text-4xl font-semibold ">Frontend</h1>
             <div className="px-1 py-2 lg:px-2 lg:py-4 flex items-center justify-center text-center flex-wrap gap-x-2 gap-y-2 lg:gap-x-3 lg:gap-y-3 ">
-              {frontend.map((item) => (
-                <div className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl">
+              {frontend.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl"
+                >
                   <span className="w-6">
                     <img src={item.image} alt="" />
                   </span>
@@ -35,8 +38,11 @@ const Skills = () => {
           <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
             <h1 className="text-2xl lg:text-4xl font-semibold ">Backend</h1>
             <div className="px-1 py-2 lg:px-2 lg:py-4 flex items-center justify-center text-center flex-wrap gap-x-2 gap-y-2 lg:gap-x-3 lg:gap-y-3 ">
-              {backend.map((item) => (
-                <div className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl">
+              {backend.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl"
+                >
                   <span className="w-6">
                     <img src={item.image} alt="" />
                   </span>
@@ -47,10 +53,15 @@ const Skills = () => {
           </div>
           {/* Others */}
           <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
-            <h1 className="text-2xl lg:text-4xl font-semibold ">Languages & Tools</h1>
+            <h1 className="text-2xl lg:text-4xl font-semibold ">
+              Languages & Tools
+            </h1>
             <div className="px-1 py-2 lg:px-2 lg:py-4 flex items-center justify-center text-center flex-wrap gap-x-2 gap-y-2 lg:gap-x-3 lg:gap-y-3 ">
-              {other.map((item) => (
-                <div className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl">
+              {other.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between gap-x-2 py-1 px-2 lg:py-2 lg:px-3 border border-zinc-200 rounded-xl"
+                >
                   <span className="w-6">
                     <img src={item.image} alt="" />
                   </span>

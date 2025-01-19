@@ -3,24 +3,31 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "../variants";
+import axios from "axios";
 
 const Contact = () => {
-  const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  function handleInfo(e) {
-    setInfo({ ...info, [e.target.name]: e.target.value });
-  }
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(info);
-    setInfo({ name: "", email: "", message: "" });
+    const response = await axios.post("http://localhost:4000/message", {
+      name,
+      email,
+      message,
+    });
+    setName("");
+    setEmail("");
+    setMessage("");
+    alert("Message sent successfully!");
   }
+
   return (
-    <section className="min-h-screen py-16 lg:selection flex items-center" id="contact">
+    <section
+      className="min-h-screen py-16 lg:selection flex items-center"
+      id="contact"
+    >
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center">
           <motion.div
@@ -50,25 +57,22 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your name"
-              name="name"
-              value={info.name}
-              onChange={handleInfo}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
             />
             <input
               type="text"
               placeholder="Your email"
-              name="email"
-              value={info.email}
-              onChange={handleInfo}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
             />
             <textarea
               className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12"
               placeholder="Your message"
-              name="message"
-              value={info.message}
-              onChange={handleInfo}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <button className="btn btn-lg">Send message</button>
           </motion.form>

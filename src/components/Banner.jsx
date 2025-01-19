@@ -3,7 +3,7 @@ import React from "react";
 import Image from "../assets/characternew.png";
 import Image2 from "../assets/leetcodenew.png";
 
-import { FaGithub, FaLinkedin, FaDribbble } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { TypeAnimation } from "react-type-animation";
 

@@ -2,11 +2,10 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import { fadeIn } from "../variants";
-
 import Img1 from "../assets/portfolio-img1.png";
 import Img2 from "../assets/portfolio-img2.png";
 import Img3 from "../assets/portfolio-img3.png";
+import { Link } from "react-router-dom";
 
 const Work = () => {
   return (
@@ -38,7 +37,8 @@ const Work = () => {
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
                 <h1 className="text-white text-2xl w-full">Wanderlust</h1>
                 <p className="text-sm text-zinc-400">
-                Wanderlust: A hotel discovery and review platform for travelers seeking the perfect stay.
+                  Wanderlust: A hotel discovery and review platform for
+                  travelers seeking the perfect stay.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
@@ -65,7 +65,8 @@ const Work = () => {
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
                 <h1 className="text-white text-2xl w-full">Expense Tracker</h1>
                 <p className="text-sm text-zinc-400">
-                Simple tool to track and manage personal expenses with ease and accuracy.
+                  Simple tool to track and manage personal expenses with ease
+                  and accuracy.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
@@ -92,7 +93,8 @@ const Work = () => {
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
                 <h1 className="text-white text-2xl w-full">Notes App</h1>
                 <p className="text-sm text-zinc-400">
-                Organize and access your notes seamlessly with a user-friendly, secure application.
+                  Organize and access your notes seamlessly with a
+                  user-friendly, secure application.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
@@ -108,8 +110,13 @@ const Work = () => {
               </div>
             </div>
           </motion.div>
-          <div className="w-full flex justify-center items-center">
-            <button className="btn w-48 btn-sm">View all projects</button>
+          <div className="w-full h-full flex justify-center items-center">
+            <a
+              className="btn w-48 btn-sm flex justify-center items-center"
+              href="https://github.com/Shobhit070304"
+            >
+              <span>View all projects</span>
+            </a>
           </div>
         </div>
       </div>

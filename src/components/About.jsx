@@ -40,13 +40,13 @@ const About = () => {
               Innovative Problem Solving.
             </h3>
             <p className="mb-6">
-              👋 Hi, I’m Shobhit! I’m a 3rd-year CS student passionate about web
+              👋 Hi, I’m Shobhit! I’m a 4rd-year CS student passionate about web
               development and tackling new challenges. I enjoy turning ideas
               into reality with clean, efficient code and am always eager to
-              learn and grow. With a strong foundation in web technologies,
-              I focus on building practical solutions that make an impact.
-              Excited to collaborate on innovative projects—let’s connect and
-              create something great! 🚀
+              learn and grow. With a strong foundation in web technologies, I
+              focus on building practical solutions that make an impact. Excited
+              to collaborate on innovative projects—let’s connect and create
+              something great! 🚀
             </p>
           </motion.div>
         </div>
