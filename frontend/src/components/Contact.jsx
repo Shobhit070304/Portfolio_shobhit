@@ -12,7 +12,7 @@ const Contact = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await axios.post("http://localhost:4000/message", {
+    const response = await axios.post("https://shobhitportfolio-rbo91e8c6-sharmashobhit1000-gmailcoms-projects.vercel.app/message", {
       name,
       email,
       message,
