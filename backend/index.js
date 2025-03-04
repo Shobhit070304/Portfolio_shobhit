@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const Message = require("./models/message");
 const mongoose = require("mongoose");
+const mongodb = require("mongodb");
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 
@@ -35,24 +36,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/message", async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-    var date = new Date();
-
-    const newMessage = await Message.create({
-      name,
-      email,
-      message,
-      date: date.toLocaleDateString() + "  " + date.toLocaleTimeString(),
-    });
-
-    return res.status(200).json(newMessage);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
-  }
-});
-
-app.post("/profile", async function (req, res) {
   try {
     const { name, email, message } = req.body;
     var date = new Date();
