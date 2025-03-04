@@ -52,8 +52,22 @@ app.post("/message", async (req, res) => {
   }
 });
 
-app.get("/profile", function (req, res) {
-  res.status(200).json({ message: "This is your profile" });
+app.post("/profile", async function (req, res) {
+  try {
+    const { name, email, message } = req.body;
+    var date = new Date();
+
+    const newMessage = await Message.create({
+      name,
+      email,
+      message,
+      date: date.toLocaleDateString() + "  " + date.toLocaleTimeString(),
+    });
+
+    return res.status(200).json(newMessage);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
 });
 
 app.listen(PORT, () => {
