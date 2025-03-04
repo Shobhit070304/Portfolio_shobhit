@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://portfolio-shobhit.vercel.app", credentials: true }));
 
 const PORT = process.env.PORT || 5000;
 
@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/message", async (req, res) => {
+  console.log("Welcome")
   try {
     const { name, email, message } = req.body;
     var date = new Date();
