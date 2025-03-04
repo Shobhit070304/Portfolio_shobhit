@@ -12,7 +12,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://portfolio-shobhit-v9kh.vercel.app/message",
+        "https://portfolio-shobhit-lo5d.vercel.app/message",
         {
           name,
           email,
