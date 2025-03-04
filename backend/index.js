@@ -5,15 +5,15 @@ const Message = require("./models/message");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-app.use(express.json());
 app.use(
   cors({
-    origin: "https://portfolio-shobhit.vercel.app",
+    origin: "https://portfolio-shobhit.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
