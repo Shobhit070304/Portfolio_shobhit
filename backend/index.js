@@ -7,13 +7,7 @@ const mongodb = require("mongodb");
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: "https://portfolio-shobhit.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use((req, res, next) => {
   res.header(
     "Access-Control-Allow-Origin",
