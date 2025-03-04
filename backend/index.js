@@ -7,7 +7,12 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(
-  cors({ origin: "https://portfolio-shobhit.vercel.app", credentials: true })
+  cors({
+    origin: "https://portfolio-shobhit.vercel.app",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 );
 
 const PORT = process.env.PORT || 5000;
@@ -23,7 +28,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/message", async (req, res) => {
-  console.log("Welcome");
   try {
     const { name, email, message } = req.body;
     var date = new Date();
@@ -35,9 +39,9 @@ app.post("/message", async (req, res) => {
       date: date.toLocaleDateString() + "  " + date.toLocaleTimeString(),
     });
 
-    res.json(newMessage);
+    return res.status(200).json(newMessage);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 

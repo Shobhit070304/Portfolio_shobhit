@@ -11,21 +11,24 @@ const Contact = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      e.preventDefault();
-      const response = await axios.post("https://portfolio-shobhit-v9kh.vercel.app/message", {
-        name,
-        email,
-        message,
-      });
-      alert("Message sent successfully!");
+      const response = await axios.post(
+        "https://portfolio-shobhit-v9kh.vercel.app/message",
+        {
+          name,
+          email,
+          message,
+        }
+      );
+      if (response.status === 200) {
+        alert("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
     } catch (error) {
       alert("Failed to send message. Please try again later.");
     }
-    setName("");
-    setEmail("");
-    setMessage("");
   }
-
   return (
     <section
       className="min-h-screen py-16 lg:selection flex items-center"
