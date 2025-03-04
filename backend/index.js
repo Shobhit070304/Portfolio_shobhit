@@ -4,6 +4,7 @@ const app = express();
 const Message = require("./models/message");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
@@ -22,8 +23,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
-
-const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 mongoose
@@ -51,6 +50,10 @@ app.post("/message", async (req, res) => {
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+});
+
+app.get("/profile", function (req, res) {
+  res.status(200).json({ message: "This is your profile" });
 });
 
 app.listen(PORT, () => {
