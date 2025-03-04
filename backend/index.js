@@ -6,16 +6,15 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors({ origin: "https://portfolio-shobhit.vercel.app", credentials: true }));
+app.use(
+  cors({ origin: "https://portfolio-shobhit.vercel.app", credentials: true })
+);
 
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error("Error connecting to MongoDB:", error));
 
@@ -24,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/message", async (req, res) => {
-  console.log("Welcome")
+  console.log("Welcome");
   try {
     const { name, email, message } = req.body;
     var date = new Date();
